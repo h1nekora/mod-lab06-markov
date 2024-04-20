@@ -1,6 +1,6 @@
 // Copyright 2021 GHA Test Team
 #include <gtest/gtest.h>
-#include"../include/textgen.h"
+#include"../textgen.h"
 
 TEST(test1, FormPrefix) {
     std::vector<std::string>words{ "1", "2", "3", "4", "5" };
