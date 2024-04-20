@@ -6,6 +6,7 @@
 #include<deque>
 #include<vector>
 class MarkovChain{
+
 public:
     typedef std::deque<std::string> prefix;
     std::map<prefix, std::vector<std::string> > statetab;
