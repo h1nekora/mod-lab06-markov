@@ -15,9 +15,10 @@ TEST(test1, FormPrefix) {
 TEST(test2, FormPrefixSuffix) {
     std::vector<std::string>words{ "1", "2", "3", "4", "5" };
     MarkovChain mark;
-    std::deque<std::string> prefix{ "2", "3" };
+    std::deque<std::string> prefix{ "1", "2" };
     mark.Tab(words, 2);
-    EXPECT_EQ(mark.statetab[prefix], "3");
+    std::deque<std::string> suffix{ "3" };
+    EXPECT_EQ(mark.statetab.begin()->first, suffix);
 }
 
 TEST(test3, ChooseSuffix) {
