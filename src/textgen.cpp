@@ -27,7 +27,7 @@ std::string MarkovChain::CreateText(int MAXGEN, unsigned int seed) {
         }
     for (int i = 0; i < MAXGEN; i++) {
         if (statetab.find(pref) == statetab.end()) break;
-        randomValue = rand_r(seed) % statetab[pref].size();
+        randomValue = rand_r(&seed) % statetab[pref].size();
         suffix = statetab[pref][randomValue];
         textOut += suffix + " ";
         pref.pop_front();
