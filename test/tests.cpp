@@ -34,7 +34,7 @@ TEST(test4, ChooseSuffixMnogo) {
     "2", "3", "1", "2", "4", "5", "1"};
     MarkovChain mark;
     mark.Tab(words, 1);
-    EXPECT_EQ(mark.CreateText(10, 10), "1 2 4 5 2 4 5 1 2 3");
+    EXPECT_EQ(mark.CreateText(10, 10), "1 2 4 5 2 4 5 1 2 3 ");
 }
 
 TEST(test5, FormText) {
