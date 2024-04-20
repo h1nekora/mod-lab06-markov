@@ -17,15 +17,15 @@ TEST(test2, FormPrefixSuffix) {
     MarkovChain mark;
     std::deque<std::string> prefix{ "1", "2" };
     mark.Tab(words, 2);
-    std::deque<std::string> suffix{ "3" };
-    EXPECT_EQ(mark.statetab.begin()->first, suffix);
+    std::vector<std::string> suffix{ "3" };
+    EXPECT_EQ(mark.statetab.begin()->second, suffix);
 }
 
 TEST(test3, ChooseSuffix) {
     std::vector<std::string>words{ "1", "2", "3", "4", "5" };
     MarkovChain mark;
     mark.Tab(words, 1);
-    EXPECT_EQ(mark.CreateText(10, 10), "1 2 3 4 5");
+    EXPECT_EQ(mark.CreateText(10, 10), "1 2 3 4 5 ");
 }
 
 TEST(test4, ChooseSuffixMnogo) {
@@ -34,7 +34,7 @@ TEST(test4, ChooseSuffixMnogo) {
     "2", "3", "1", "2", "4", "5", "1"};
     MarkovChain mark;
     mark.Tab(words, 1);
-    EXPECT_EQ(mark.CreateText(10, 10), "1 2 3 4 5 1 2 4 5 2");
+    EXPECT_EQ(mark.CreateText(10, 10), "1 2 4 5 2 4 5 1 2 3");
 }
 
 TEST(test5, FormText) {
@@ -49,5 +49,5 @@ TEST(test5, FormText) {
     prefix pre{ "one" };
     mark.statetab = state;
     mark.fpref = pre;
-    EXPECT_EQ(mark.CreateText(10, 10), "one TwO");
+    EXPECT_EQ(mark.CreateText(10, 10), "one TwO ");
 }
