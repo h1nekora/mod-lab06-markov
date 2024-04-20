@@ -3,7 +3,7 @@
 #include<fstream>
 #include<locale>
 #include"textgen.h"
-int main(){
+int main() {
     const int NPREF = 2;
     const int MAXGEN = 1000;
     const int seed = 100;
