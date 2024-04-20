@@ -2,7 +2,7 @@
 #include <iostream>
 #include<fstream>
 #include<locale>
-#include"MarkovChain.h"
+#include"textgen.h"
 int main()
 {
 	const int NPREF = 2;
