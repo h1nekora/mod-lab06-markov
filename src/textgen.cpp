@@ -1,5 +1,5 @@
 // Copyright 2022 UNN-IASR
-#include "MarkovChain.h"
+#include "textgen.h"
 void MarkovChain::Tab(std::vector<std::string> words,int NREF) {
 	prefix pref;
 	int global = 0;
