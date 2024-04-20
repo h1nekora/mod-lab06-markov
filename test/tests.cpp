@@ -11,6 +11,7 @@ TEST(test1, FormPrefix) {
     mark.Tab(words, 2);
     EXPECT_EQ(prefix, mark.fpref);
 }
+
 TEST(test2, FormPrefixSuffix) {
     std::vector<std::string>words{ "1", "2", "3", "4", "5" };
     MarkovChain mark;
@@ -18,12 +19,14 @@ TEST(test2, FormPrefixSuffix) {
     mark.Tab(words, 2);
     EXPECT_EQ(mark.statetab[prefix], "3");
 }
+
 TEST(test3, ChooseSuffix) {
     std::vector<std::string>words{ "1", "2", "3", "4", "5" };
     MarkovChain mark;
     mark.Tab(words, 1);
     EXPECT_EQ(mark.CreateText(10, 10), "1 2 3 4 5");
 }
+
 TEST(test4, ChooseSuffixMnogo) {
     std::vector<std::string>words{ "1",
     "2", "3", "4", "5",
@@ -32,6 +35,7 @@ TEST(test4, ChooseSuffixMnogo) {
     mark.Tab(words, 1);
     EXPECT_EQ(mark.CreateText(10, 10), "1 2 3 4 5 1 2 4 5 2");
 }
+
 TEST(test5, FormText) {
     typedef std::deque<std::string> prefix;
     std::map<prefix, std::vector<std::string> > state = {
